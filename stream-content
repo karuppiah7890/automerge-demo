@@ -1,0 +1,73 @@
+CRDT - Conflict-free Replicated Data Type
+
+Area - Real Time Collaboration. 
+
+Real Time Collaboration in documents - by multiple people - starting with two
+people.
+
+Two people are simulateneously working on a document, so, how does that look like?
+How do you implement a mobile app, or web app or anything, where two users
+on two different devices on different or same networks be able to Collaborate?
+And also support offline usage.
+
+network?
+where is the document stored? in case of offline usage, so, we cannot store
+in some central server? centralized systems
+
+CRDT - Conflict-free Replicated Data Type
+
+Conflict-free ?
+Replicated?
+Data type?
+
+storing data - structure, type ? we are defining a new type, which has some
+features
+
+Conflict free - concurrent / simulateneous modification of data by multiple 
+users - if there's any conflict in data - similar to git merge conflict - it
+has to be resolved and we are looking at an automatic / manual resolution
+
+----
+
+User 1 ->
+
+"Hello!"
+
+User 2 ->
+
+"Hello! Hi!"
+
+User 3 (simulateneously when user 2 is typing) ->
+
+"Hello! Hey! Hi"
+
+action -> send to server and then reflect it in the view. not gonna work here -
+it's going to very slow. when user makes changes in their doc in their local,
+we immediately apply the changes in their local doc. We later merge all the
+contents of each user's doc - to reach the collaborated doc's content
+
+how to store?
+
+automerge
+
+JSON data structure
+
+Replicated -? the data is replicated among all the nodes / peers / users. In 
+this case, it's the document that the users are modifying, which is stored in
+their local while modifying, but later merged to get final content.
+
+git commit - git push - git pull - resolve merge conflicts and finally - we 
+all have the same set of commits and same final state - same codebase.
+
+here in the case of document collaboration - we want the final doc to be the
+same in all the devices so that the users see the same thing - even after the
+merge.
+
+https://www.youtube.com/watch?v=ZLjl_55um4I
+
+https://www.youtube.com/watch?v=B5NULPSiOGw - Martin Kleppmann
+
+https://arxiv.org/abs/1608.03960
+
+
+
